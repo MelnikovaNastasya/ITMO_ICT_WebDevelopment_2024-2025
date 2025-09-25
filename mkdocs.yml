@@ -1,7 +1,9 @@
 site_name: ITMO ICT Web Development Reports
+docs_dir: students/k3341/laboratory_works/Melnikova_Nastasya/lab1
 
 nav:
-  - Лаба 1: students/k3341/laboratory_works/Melnikova_Nastasya/lab1/report.md
+  - Лаба 1: report.md
+
 
 
 
