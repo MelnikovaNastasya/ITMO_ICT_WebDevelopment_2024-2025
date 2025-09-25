@@ -1,6 +1,9 @@
 site_name: ITMO ICT Web Development Reports
 nav:
-  - Лаба 1: index.md
+  - Главная: index.md
+theme:
+  name: material
+
 
 
 
