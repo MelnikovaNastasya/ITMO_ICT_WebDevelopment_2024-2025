@@ -1,0 +1,10 @@
+site_name: ITMO ICT Web Development Reports
+nav:
+  - Home: README.md
+  - Students:
+      - k3341:
+          - Melnikova_Nastasya:
+              - Лабораторная работа 1: students/k3341/laboratory_works/Melnikova_Nastasya/lab1/report.md
+
+theme:
+  name: material
