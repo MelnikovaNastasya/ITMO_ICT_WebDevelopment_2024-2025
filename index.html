@@ -1,28 +1,26 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="ru" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <meta name="author" content="['Твоё имя']">
-      
       
       
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Лабораторная работа — Сокеты и Web-приложения - ITMO ICT Web Development Reports</title>
+        <title>Лабораторная работа Django</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
       
       
 
@@ -60,8 +58,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
-          Skip to content
+        <a href="#no2-django" class="md-skip">
+          Перейти к содержанию
         </a>
       
     </div>
@@ -75,8 +73,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ITMO ICT Web Development Reports" class="md-header__button md-logo" aria-label="ITMO ICT Web Development Reports" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="." title="Лабораторная работа Django" class="md-header__button md-logo" aria-label="Лабораторная работа Django" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -90,13 +88,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ITMO ICT Web Development Reports
+            Лабораторная работа Django
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Лабораторная работа — Сокеты и Web-приложения
+              Лабораторная работа №2: РЕАЛИЗАЦИЯ ПРОСТОГО САЙТА СРЕДСТВАМИ DJANGO
             
           </span>
         </div>
@@ -118,16 +116,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Поиск">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -138,7 +136,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Инициализация поиска
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -172,15 +170,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ITMO ICT Web Development Reports" class="md-nav__button md-logo" aria-label="ITMO ICT Web Development Reports" data-md-component="logo">
+    <a href="." title="Лабораторная работа Django" class="md-nav__button md-logo" aria-label="Лабораторная работа Django" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    ITMO ICT Web Development Reports
+    Лабораторная работа Django
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -201,17 +201,58 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №2: РЕАЛИЗАЦИЯ ПРОСТОГО САЙТА СРЕДСТВАМИ DJANGO
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Главная
+    Лабораторная работа №2: РЕАЛИЗАЦИЯ ПРОСТОГО САЙТА СРЕДСТВАМИ DJANGO
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цель работы
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -224,24 +265,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -251,439 +274,234 @@
 
 
 
-<h1 id="_1">Введение</h1>
-<p>В этой работе выполняется 5 заданий по сетевому программированию: UDP, TCP, HTTP, чат, работа с GET/POST. Цель — закрепить навыки работы с <code>socket</code>, потоками и HTTP.</p>
-<h1 id="_2">Содержание</h1>
-<ol>
-<li>Задание 1 — UDP Hello  </li>
-<li>Задание 2 — TCP + Математика  </li>
-<li>Задание 3 — HTTP + index.html  </li>
-<li>Задание 4 — Чат  </li>
-<li>Задание 5 — Веб-журнал оценок (GET/POST)  </li>
-<li>Вывод</li>
-</ol>
+<h1 id="no2-django">Лабораторная работа №2: РЕАЛИЗАЦИЯ ПРОСТОГО САЙТА СРЕДСТВАМИ DJANGO</h1>
+<p><strong>Вариант №4 — “Список туров туристической фирмы”</strong></p>
 <hr />
-<h2 id="1-udp-hello">Задание 1 — UDP Hello</h2>
-<p><strong>Условие:</strong><br />
-Клиент отправляет «Hello, server», сервер получает и показывает, потом отвечает «Hello, client», и клиент показывает ответ. Протокол: UDP.  </p>
-<p><strong>Код (сервер):</strong>  </p>
-<pre><code class="language-python">import socket
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # создаём UDP сокет
-
-sock.bind((&quot;127.0.0.1&quot;, 12345)) # привязываем его к локальному адресу и порту
-
-print(&quot;UDP сервер запущен и ждёт сообщений...&quot;)
-
-while True:
-    data, addr = sock.recvfrom(1024)  # ждём сообщение от клиента, 1024 — максимальный размер пакета
-
-    print(&quot;Получено:&quot;, data.decode(), &quot;от&quot;, addr)
-
-    sock.sendto(&quot;Hello, client&quot;.encode(), addr) # отвечаем клиенту
+<h2 id="_1">Цель работы</h2>
+<p>овладеть практическими навыками и умениями реализации web-сервисов
+средствами Django 2.2  </p>
+<p>Создать сайт туристической фирмы, позволяющий пользователям:</p>
+<ol>
+<li>регистрироваться и авторизовываться,</li>
+<li>просматривать туры,</li>
+<li>бронировать туры и управлять своими бронями,</li>
+<li>оставлять отзывы с рейтингом (1–10),</li>
+<li>просматривать статистику проданных туров по странам.</li>
+</ol>
+<h1 id="c">Cтруктура проекта</h1>
+<pre><code class="language-markdown">tour_agency/
+├── manage.py
+├── tour_agency/
+│ ├── settings.py
+│ ├── urls.py
+│ ├── wsgi.py
+│ └── asgi.py
+└── tours/
+├── admin.py
+├── apps.py
+├── models.py
+├── views.py
+├── urls.py
+├── templates/
+│ └── tours/
+│ ├── base.html
+│ ├── tour_list.html
+│ ├── my_reservations.html
+│ ├── add_review.html
+│ ├── tour_detail.html
+│ └── sold_tours.html
+└── migrations/
+└── 0001_initial.py
 </code></pre>
-<p><strong>Код (клиент):</strong>  </p>
-<pre><code class="language-python">import socket
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-server_address = (&quot;127.0.0.1&quot;, 12345)
-
-sock.sendto(&quot;Hello, server&quot;.encode(), server_address) # отправляем сообщение серверу
-
-data, _ = sock.recvfrom(1024)
-print(&quot;Ответ сервера:&quot;, data.decode())
-
-sock.close()
+<h3 id="1">1. Создание и настройка проекта</h3>
+<ol>
+<li>Установлено виртуальное окружение и необходимые пакеты:
+   <code>bash
+   pip install django psycopg2-binary bootstrap5 mkdocs</code></li>
+<li>Создан проект:</li>
+</ol>
+<pre><code class="language-bash">django-admin startproject tour_agency
+python manage.py startapp tours
 </code></pre>
-<p><img alt="скрин работы" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560386-y.jpg" />
-<img alt="" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560482-y.jpg" /></p>
-<h2 id="2-tcp">Задание 2 —  TCP + Математика</h2>
-<p><strong>Условие:</strong><br />
-Клиент вводит параметры, сервер делает одну из математических операций (например, теорему Пифагора). Протокол: TCP.</p>
-<p><strong>Код (сервер):</strong>  </p>
-<pre><code class="language-python">import socket
-import math
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # создаём TCP сокет
-
-sock.bind((&quot;127.0.0.1&quot;, 12345)) # привязываем к адресу и порту
-
-sock.listen(1) # 1 = сколько подключений в очереди
-
-print(&quot;TCP сервер ждёт подключение...&quot;)
-
-conn, addr = sock.accept()
-print(&quot;Подключился:&quot;, addr)
-
-while True:
-    data = conn.recv(1024).decode()
-    if not data:
-        break  # если клиент закрыл соединение — выходим
-
-    try:
-        a, b = map(float, data.split())
-        c = math.sqrt(a**2 + b**2)  # считаем гипотенузу
-        conn.send(str(c).encode())  # отправляем обратно
-    except:
-        conn.send(&quot;Ошибка ввода!&quot;.encode())
-
-conn.close()
+<p>Добавлено приложение tours в INSTALLED_APPS и настроено подключение к PostgreSQL:</p>
+<pre><code class="language-python">DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tour_db',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 </code></pre>
-<p><strong>Код (клиент):</strong></p>
-<pre><code class="language-python">import socket
+<h3 id="_2">Вывод:</h3>
+<p>Базовая структура Django-проекта создана, связь с PostgreSQL установлена.</p>
+<h3 id="2">2. Моделирование данных</h3>
+<p>Определены три модели:</p>
+<pre><code class="language-python">class Tour(models.Model):
+    name = models.CharField(max_length=100)
+    agency = models.CharField(max_length=100)
+    country = models.CharField(max_length=100, default='')
+    description = models.TextField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    payment_terms = models.TextField()
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # создаём TCP сокет
+    def __str__(self):
+        return self.name
 
-sock.connect((&quot;127.0.0.1&quot;, 12345)) # подключаемся к серверу
 
-a = input(&quot;Введите a: &quot;)
-b = input(&quot;Введите b: &quot;)
+class Reservation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    reserved_on = models.DateTimeField(auto_now_add=True)
+    confirmed = models.BooleanField(default=False)
 
-sock.send((a + &quot; &quot; + b).encode()) # отправляем строку &quot;a b&quot;
+    def __str__(self):
+        return f&quot;{self.user.username} → {self.tour.name}&quot;
 
-result = sock.recv(1024).decode() # ждём результат
-print(&quot;Результат:&quot;, result)
 
-sock.close()
+class Review(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    rating = models.IntegerField(default=5)
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f&quot;{self.tour.name} ({self.rating}/10)&quot;
 </code></pre>
-<p><img alt="скрин работы" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560514-y.jpg" />
-<img alt="" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560515-y.jpg" /></p>
-<h2 id="3-http-indexhtml">Задание 3 - HTTP + index.html</h2>
-<p><strong>Условие:</strong><br />
-Сервер отдаёт HTML-страницу, которую он читает из файла index.html.</p>
-<p><strong>Код (сервер):</strong>  </p>
-<pre><code class="language-python">import socket
-import os
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind((&quot;127.0.0.1&quot;, 8081))
-sock.listen(1)
-
-print(&quot;HTTP сервер ждёт подключение на http://127.0.0.1:8081/ ...&quot;)
-
-while True:
-    conn, addr = sock.accept()
-    request = conn.recv(1024).decode()
-    print(&quot;Запрос:\n&quot;, request)
-
-    try:
-        path = request.split(&quot; &quot;)[1]
-    except:
-        path = &quot;/&quot;
-
-    if path == &quot;/&quot;:
-        path = &quot;/index.html&quot;
-
-    file_path = path.lstrip(&quot;/&quot;)
-
-    if os.path.exists(file_path):
-        with open(file_path, &quot;rb&quot;) as f:
-            content = f.read()
-        if file_path.endswith(&quot;.html&quot;):
-            content_type = &quot;text/html&quot;
-        elif file_path.endswith(&quot;.jpg&quot;) or file_path.endswith(&quot;.jpeg&quot;):
-            content_type = &quot;image/jpeg&quot;
-        else:
-            content_type = &quot;application/octet-stream&quot;
-
-        response = f&quot;HTTP/1.1 200 OK\nContent-Type: {content_type}\n\n&quot;.encode() + content
-    else:
-        response = &quot;HTTP/1.1 404 Not Found\nContent-Type: text/plain\n\nФайл не найден&quot;.encode()
-
-    conn.send(response)
-    conn.close()
+<h3 id="_3">Вывод:</h3>
+<p>Созданы взаимосвязанные модели, реализующие основные сущности предметной области:
+тур, бронирование и отзыв. Связи построены по принципу “один-ко-многим” через ForeignKey.</p>
+<h3 id="3-urlspy">3. Настройка маршрутов (urls.py)</h3>
+<p>Созданы пути для всех функций приложения:</p>
+<pre><code class="language-python">urlpatterns = [
+    path('', views.tour_list, name='tour_list'),
+    path('register/', views.register, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='tours/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
+    path('reserve/&lt;int:tour_id&gt;/', views.reserve_tour, name='reserve_tour'),
+    path('my_reservations/', views.my_reservations, name='my_reservations'),
+    path('delete_reservation/&lt;int:res_id&gt;/', views.delete_reservation, name='delete_reservation'),
+    path('tour/&lt;int:tour_id&gt;/', views.tour_detail, name='tour_detail'),
+    path('review/&lt;int:tour_id&gt;/', views.add_review, name='add_review'),
+    path('sold_tours/', views.sold_tours, name='sold_tours'),
+]
 </code></pre>
-<p><strong>index.html</strong></p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;ru&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Мой первый сервер на Python&lt;/title&gt;
-    &lt;style&gt;
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #87CEFA;
-            color: #000;
-            text-align: center;
-        }
-        header {
-            background: #4682B4;
-            color: white;
-            padding: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        main {
-            margin: 40px auto;
-            max-width: 600px;
-            background: #f0f8ff;
-            color: #000;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #000080;
-        }
-        img {
-            max-width: 300px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
-        }
-        .caption {
-            margin-top: 10px;
-            font-size: 16px;
-            font-style: italic;
-            color: #333;
-        }
-        footer {
-            margin-top: 40px;
-            padding: 15px;
-            font-size: 14px;
-            background: #4682B4;
-            color: white;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        Сервер
-    &lt;/header&gt;
-    &lt;main&gt;
-        &lt;h1&gt;DU-DU-DU&lt;/h1&gt;
-        &lt;img src=&quot;verstappen_sid.jpg&quot; alt=&quot;Sid Verstappen&quot;&gt;
-        &lt;div class=&quot;caption&quot;&gt;33 Verstappen &lt;/div&gt;
-    &lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h3 id="_4">Вывод:</h3>
+<p>Маршрутизация реализована в соответствии с архитектурой MVC — каждая страница приложения обрабатывается отдельным view-функцией.</p>
+<h3 id="4-viewspy">4. Реализация представлений (views.py)</h3>
+<p><strong>tour_list</strong> — отображает все туры.</p>
+<p><strong>register, login, logout</strong> — регистрация и аутентификация пользователей.</p>
+<p><strong>reserve_tour, my_reservations, delete_reservation</strong> — операции с бронированиями.</p>
+<p><strong>add_review, tour_detail</strong> — добавление и просмотр отзывов.</p>
+<p><strong>sold_tours</strong> — аналитика продаж по странам.</p>
+<h3 id="5">5. Шаблоны и дизайн</h3>
+<p>Для клиентской части использован Bootstrap 5.
+Создана базовая структура шаблонов:</p>
+<pre><code class="language-markdown">base.html – общая навигация
+tour_list.html – список туров
+my_reservations.html – личные брони
+tour_detail.html – описание тура + отзывы
+add_review.html – форма добавления отзыва
+sold_tours.html – таблица проданных туров
 </code></pre>
-<p><img alt="скрин работы" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560522-y.jpg" /></p>
-<h2 id="4">Задание 4 — Чат</h2>
-<p><strong>Условие:</strong>
-Многопользовательский чат через TCP с использованием потоков.
-<strong>Код (сервер):</strong></p>
-<pre><code class="language-python">import socket
-import threading
-
-clients = {}  # словарь: conn -&gt; имя
-
-def handle_client(conn, addr):
-    try:
-        nickname = conn.recv(1024).decode(&quot;utf-8&quot;, errors=&quot;ignore&quot;) # первым делом получаем ник от клиента
-        clients[conn] = nickname
-        print(f&quot;[+] {nickname} подключился с {addr}&quot;)
-
-        broadcast(f&quot;📢 {nickname} вошёл в чат&quot;, conn) # рассылаем всем сообщение о подключении
-
-        while True:
-            msg = conn.recv(1024).decode(&quot;utf-8&quot;, errors=&quot;ignore&quot;)
-            if not msg:
-                break
-            print(f&quot;[{nickname}]: {msg}&quot;)
-            broadcast(f&quot;[{nickname}]: {msg}&quot;, conn)
-
-    except:
-        pass
-    finally:
-        if conn in clients: # отключение клиента
-            name = clients[conn]
-            print(f&quot;[-] {name} отключился&quot;)
-            broadcast(f&quot;📢 {name} покинул чат&quot;, conn)
-            del clients[conn]
-        conn.close()
-
-def broadcast(message, sender_conn=None):
-    &quot;&quot;&quot;Рассылка всем клиентам, кроме отправителя&quot;&quot;&quot;
-    for c in list(clients.keys()):
-        if c != sender_conn:
-            try:
-                c.send(message.encode(&quot;utf-8&quot;, errors=&quot;ignore&quot;))
-            except:
-                c.close()
-                del clients[c]
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind((&quot;127.0.0.1&quot;, 12345))
-sock.listen()
-
-print(&quot;Сервер чата запущен...&quot;)
-
-while True:
-    conn, addr = sock.accept()
-    thread = threading.Thread(target=handle_client, args=(conn, addr))
-    thread.start()
+<h3 id="6-django">6. Админ-панель Django</h3>
+<p>Добавлены модели Tour, Reservation, Review.</p>
+<p>Администратор подтверждает бронирования через флаг Confirmed.
+<img alt="img_4.png" src="img_4.png" /></p>
+<h3 id="_5">Вывод:</h3>
+<p>Админ-интерфейс полностью функционален и позволяет управлять всеми данными без прямого доступа к БД.</p>
+<h3 id="7">7. Реализация аналитической таблицы</h3>
+<p>Создан метод sold_tours:</p>
+<pre><code class="language-python">def sold_tours(request):
+    data = (
+        Reservation.objects.filter(confirmed=True)
+        .values('tour__country', 'tour__name', 'tour__agency')
+        .annotate(sold_count=Count('id'))
+        .order_by('tour__country')
+    )
+    return render(request, 'tours/sold_tours.html', {'data': data})
 </code></pre>
-<p><strong>Код (клиент):</strong></p>
-<pre><code class="language-python">import socket
-import threading
-
-def receive(sock):
-    while True:
-        try:
-            msg = sock.recv(1024).decode(&quot;utf-8&quot;, errors=&quot;ignore&quot;)
-            if msg:
-                print(msg)
-            else:
-                break
-        except:
-            break
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect((&quot;127.0.0.1&quot;, 12345))
-
-nickname = input(&quot;Введите свой ник: &quot;) # спрашиваем имя
-sock.send(nickname.encode(&quot;utf-8&quot;, errors=&quot;ignore&quot;))
-
-thread = threading.Thread(target=receive, args=(sock,)) # запускаем поток для приёма сообщений
-thread.start()
-
-print(&quot;Теперь можно писать сообщения&quot;)
-while True:
-    msg = input()
-    sock.send(msg.encode(&quot;utf-8&quot;, errors=&quot;ignore&quot;))
-</code></pre>
-<p><img alt="скрин работы" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560549-y.jpg" /></p>
-<h2 id="5-get-post">Задание 5 — Веб-журнал с оценками (GET / POST)</h2>
-<p><strong>Условие:</strong>
-Сервер принимает через POST дисциплину + оценку, хранит их, а при GET отдаёт HTML с журналом оценок по предметам.
-Код (сервер с объединением оценок):</p>
-<pre><code class="language-python">import socket
-from urllib.parse import parse_qs
-
-grades = {}
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind((&quot;127.0.0.1&quot;, 8082))  # порт 8082
-sock.listen(1)
-
-print(&quot;Сервер запущен на http://127.0.0.1:8082/&quot;)
-
-while True:
-    conn, addr = sock.accept()
-    request = conn.recv(1024).decode(&quot;utf-8&quot;, errors=&quot;ignore&quot;)
-    print(&quot;Запрос:\n&quot;, request)
-
-    if request.startswith(&quot;POST&quot;):
-        body = request.split(&quot;\r\n\r\n&quot;, 1)[1]
-        data = parse_qs(body)
-
-        subject = data.get(&quot;subject&quot;, [&quot;Неизвестно&quot;])[0]
-        grade = data.get(&quot;grade&quot;, [&quot;-&quot;])[0]
-
-        if subject not in grades:
-            grades[subject] = []
-        grades[subject].append(grade)
-
-        response_body = f&quot;&quot;&quot;
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;h2&gt; Добавлено: {subject} — {grade}&lt;/h2&gt;
-            &lt;a href=&quot;/&quot;&gt;Назад&lt;/a&gt;
-        &lt;/div&gt;
-        &quot;&quot;&quot;
-
-    else:  # GET-запрос
-        response_body = &quot;&lt;div class='container'&gt;&lt;h1&gt; Журнал оценок&lt;/h1&gt;&lt;table&gt;&quot;
-        response_body += &quot;&lt;tr&gt;&lt;th&gt;Дисциплина&lt;/th&gt;&lt;th&gt;Оценки&lt;/th&gt;&lt;/tr&gt;&quot;
-
-        for subject, grade_list in grades.items():
-            grades_str = &quot;, &quot;.join(grade_list)
-            response_body += f&quot;&lt;tr&gt;&lt;td&gt;&lt;b&gt;{subject}&lt;/b&gt;&lt;/td&gt;&lt;td&gt;{grades_str}&lt;/td&gt;&lt;/tr&gt;&quot;
-
-        response_body += &quot;&lt;/table&gt;&quot;
-
-        response_body += &quot;&quot;&quot;
-        &lt;h2&gt;➕ Добавить новую оценку&lt;/h2&gt;
-        &lt;form method=&quot;POST&quot;&gt;
-            &lt;label&gt;Дисциплина:&lt;/label&gt;&lt;br&gt;
-            &lt;input type=&quot;text&quot; name=&quot;subject&quot; style=&quot;width:300px; padding:5px;&quot;&gt;&lt;br&gt;&lt;br&gt;
-            &lt;label&gt;Оценка:&lt;/label&gt;&lt;br&gt;
-            &lt;input type=&quot;text&quot; name=&quot;grade&quot; style=&quot;width:100px; padding:5px;&quot;&gt;&lt;br&gt;&lt;br&gt;
-            &lt;input type=&quot;submit&quot; value=&quot;Добавить&quot; 
-                style=&quot;padding:10px 20px; background:#4682B4; color:white; border:none; border-radius:5px; cursor:pointer;&quot;&gt;
-        &lt;/form&gt;
-        &lt;/div&gt;
-        &quot;&quot;&quot;
-
-    page = f&quot;&quot;&quot;
-    &lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;title&gt;Журнал оценок&lt;/title&gt;
-        &lt;style&gt;
-            body {{
-                background: #87CEFA; /* голубой фон */
-                font-family: Arial, sans-serif;
-                color: #000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-            }}
-            .container {{
-                background: #f0f8ff;
-                padding: 30px;
-                border-radius: 15px;
-                width: 600px;
-                text-align: center;
-                box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            }}
-            table {{
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 20px;
-            }}
-            th, td {{
-                border: 1px solid #4682B4;
-                padding: 10px;
-                text-align: center;
-            }}
-            th {{
-                background: #4682B4;
-                color: white;
-            }}
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        {response_body}
-    &lt;/body&gt;
-    &lt;/html&gt;
-    &quot;&quot;&quot;
-
-    response = &quot;HTTP/1.1 200 OK\nContent-Type: text/html; charset=utf-8\n\n&quot; + page
-    conn.send(response.encode(&quot;utf-8&quot;))
-    conn.close()
-</code></pre>
-<p><img alt="скрин работы" src="/Users/nastasamelnikova/PycharmProjects/pythonProject9/telegram-cloud-photo-size-2-5379683809869560559-y.jpg" /></p>
-<h1 id="_3">Вывод</h1>
-<p>В ходе выполнения лабораторной работы были изучены основные приёмы работы с сетевыми протоколами и библиотекой socket в Python. 
-<strong>На практических заданиях были реализованы:</strong>
-- простейшее взаимодействие по протоколу UDP (обмен сообщениями без установки соединения),
-- клиент-серверное приложение на основе TCP с реализацией математических операций,
-- HTTP-сервер, обслуживающий статическую страницу index.html,
-- многопользовательский чат с потоками, позволяющий общаться нескольким клиентам одновременно,
-- веб-журнал оценок, в котором данные обрабатываются через GET и POST-запросы и выводятся в структурированном виде.
-<strong>Выполненная работа позволила:</strong>
-- понять различия между протоколами UDP и TCP;
-- освоить структуру и обработку HTTP-запросов вручную;
-- закрепить навыки работы с многопоточностью в Python;
-- научиться хранить и отображать данные в динамическом веб-приложении.
-Таким образом, в рамках лабораторной работы удалось не только реализовать все требуемые задания, но и сформировать целостное представление о принципах работы клиент-серверных приложений и их взаимодействии через сетевые протоколы.</p>
+<h3 id="_6">Вывод:</h3>
+<p>Собирается статистика по странам и турам.
+Подтверждённые бронирования отображаются в виде таблицы с количеством продаж.</p>
+<h3 id="8">8. Тестирование работы сайта</h3>
+<table>
+<thead>
+<tr>
+<th>Проверяемый функционал</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Регистрация и вход</td>
+<td>Успешно</td>
+</tr>
+<tr>
+<td>Просмотр туров</td>
+<td>Отображаются все туры</td>
+</tr>
+<tr>
+<td>Бронирование</td>
+<td>Создаётся запись в БД</td>
+</tr>
+<tr>
+<td>Подтверждение админом</td>
+<td>Статус меняется на “Подтверждено”</td>
+</tr>
+<tr>
+<td>Удаление брони</td>
+<td>Успешно</td>
+</tr>
+<tr>
+<td>Добавление отзывов</td>
+<td>Отображаются с именем и рейтингом</td>
+</tr>
+<tr>
+<td>Таблица продаж</td>
+<td>Работает и сортируется по странам</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">Примеры экранов интерфейса</h3>
+<p>Главная страница (список туров):
+<img alt="img.png" src="img.png" /></p>
+<p>Личные брони:
+<img alt="img_1.png" src="img_1.png" /></p>
+<p>Описание тура с отзывами:
+<img alt="img_2.png" src="img_2.png" /></p>
+<p>Проданные туры по странам:
+<img alt="img_3.png" src="img_3.png" /></p>
+<h3 id="_8">Общий вывод</h3>
+<p>В результате выполнения лабораторной работы было создано полноценное веб-приложение туристической фирмы на фреймворке Django с использованием базы данных PostgreSQL.
+Система реализует все основные функции, указанные в задании:</p>
+<ul>
+<li>регистрация и авторизация пользователей;</li>
+<li>просмотр и бронирование туров;</li>
+<li>редактирование и удаление собственных бронирований;</li>
+<li>добавление отзывов и выставление рейтингов;</li>
+<li>подтверждение бронирований администратором через встроенную панель Django-admin;</li>
+<li>формирование таблицы проданных туров по странам.</li>
+</ul>
+<p>В ходе работы были закреплены практические навыки:</p>
+<ul>
+<li>проектирования моделей данных и связей между ними;</li>
+<li>использования ORM Django для взаимодействия с базой данных;</li>
+<li>построения маршрутов и шаблонов;</li>
+<li>организации клиентского интерфейса с помощью Bootstrap 5;</li>
+<li>работы с админ-панелью и системой аутентификации пользователей.</li>
+</ul>
+<p>Итоговый продукт имеет понятный интерфейс, чёткую структуру и легко расширяется.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -726,7 +544,7 @@ while True:
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.sections", "toc.integrate"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
